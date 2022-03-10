@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "19e34f39-e9ba-45c7-9516-fe274563ab7e",
+		"name": "Macacolandia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/user",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tiago\"\n}"
+						},
+						"url": {
+							"raw": "{{base}}/user",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rooms",
+			"item": [
+				{
+					"name": "get rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/room",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tiago\",\n    \"price\": 150,\n    \"typology\": \"DOUBLE\"\n}"
+						},
+						"url": {
+							"raw": "{{base}}/room",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"room"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hotels",
+			"item": []
+		},
+		{
+			"name": "positions",
+			"item": [
+				{
+					"name": "get positions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/position",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"position"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add position",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"0\",\n    \"coordinates\": [40.124, -8.31213]\n}"
+						},
+						"url": {
+							"raw": "{{base}}/position",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"position"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get meeting times",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/meeting_times?user_id1=0&user_id2=1&error_radius=5&threshold_time=120",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"meeting_times"
+							],
+							"query": [
+								{
+									"key": "user_id1",
+									"value": "0"
+								},
+								{
+									"key": "user_id2",
+									"value": "1"
+								},
+								{
+									"key": "error_radius",
+									"value": "5"
+								},
+								{
+									"key": "threshold_time",
+									"value": "120"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users positions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/user_positions?user_ids=1",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user_positions"
+							],
+							"query": [
+								{
+									"key": "user_ids",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "user_ids",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reservations",
+			"item": [
+				{
+					"name": "get reservations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/reservation",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add reservation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"check_in\": \"02-10-2021\",\n    \"check_out\": \"04-11-2023\",\n    \"typology\": \"TWIN\",\n    \"price\": 520,\n    \"room_id\": 1,\n    \"user_ids\": [0, 2]\n}"
+						},
+						"url": {
+							"raw": "{{base}}/reservation",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update reservation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reservation_id\": 0,\n    \"room_id\": 1111,\n    \"user_ids\": [1, 2]\n}"
+						},
+						"url": {
+							"raw": "{{base}}/reservation",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "http://localhost:5001",
+			"type": "string"
+		}
+	]
+}
